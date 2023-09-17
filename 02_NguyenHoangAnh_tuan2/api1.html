@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="id">;
+    <input type="text" name="" id="text">;
+    <script>
+    const urlBacon = "https://jsonplaceholder.typicode.com/todos/3";
+    (function () {
+    $.ajax({
+    method: "GET",
+    url: urlBacon,
+    dataType: "json",
+    })
+    .done(function (data) {
+    console.log(data);
+    document.getElementById('id').value = data.id;
+    document.getElementById('text').value = data.title;
+    })
+    .fail(function () {
+    alert("no good");
+    });
+    })();
+    </script>
+</body>
+
+</html>
